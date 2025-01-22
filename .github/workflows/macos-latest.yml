@@ -10,23 +10,24 @@ jobs:
     steps:
       - name: Add rows to the TCC.db
         run: |
-#         0|service|TEXT|1||1
-# 1|client|TEXT|1||2
-# 2|client_type|INTEGER|1||3
-# 3|auth_value|INTEGER|1||0
-# 4|auth_reason|INTEGER|1||0
-# 5|auth_version|INTEGER|1||0
-# 6|csreq|BLOB|0||0
-# 7|policy_id|INTEGER|0||0
-# 8|indirect_object_identifier_type|INTEGER|0||0
-# 9|indirect_object_identifier|TEXT|1|'UNUSED'|4
-# 10|indirect_object_code_identity|BLOB|0||0
-# 11|flags|INTEGER|0||0
-# 12|last_modified|INTEGER|1|CAST(strftime('%s','now') AS INTEGER)|0
-# 13|pid|INTEGER|0||0
-# 14|pid_version|INTEGER|0||0
-# 15|boot_uuid|TEXT|1|'UNUSED'|0
-# 16|last_reminded|INTEGER|1|CAST(strftime('%s','now') AS INTEGER)|0
+          # 0|service|TEXT|1||1
+          # 1|client|TEXT|1||2
+          # 2|client_type|INTEGER|1||3
+          # 3|auth_value|INTEGER|1||0
+          # 4|auth_reason|INTEGER|1||0
+          # 5|auth_version|INTEGER|1||0
+          # 6|csreq|BLOB|0||0
+          # 7|policy_id|INTEGER|0||0
+          # 8|indirect_object_identifier_type|INTEGER|0||0
+          # 9|indirect_object_identifier|TEXT|1|'UNUSED'|4
+          # 10|indirect_object_code_identity|BLOB|0||0
+          # 11|flags|INTEGER|0||0
+          # 12|last_modified|INTEGER|1|CAST(strftime('%s','now') AS INTEGER)|0
+          # 13|pid|INTEGER|0||0
+          # 14|pid_version|INTEGER|0||0
+          # 15|boot_uuid|TEXT|1|'UNUSED'|0
+          # 16|last_reminded|INTEGER|1|CAST(strftime('%s','now') AS INTEGER)|0
+
           sudo sqlite3 "$HOME/Library/Application Support/com.apple.TCC/TCC.db" "PRAGMA table_info(access);"
           sudo sqlite3 "$HOME/Library/Application Support/com.apple.TCC/TCC.db" "INSERT OR REPLACE INTO access VALUES('kTCCServiceAppleEvents','com.devexpress.testcafe-browser-tools',0,2,3,1,X'fade0c0000000068000000010000000700000007000000080000001443fa4ca5141baeda21aeca1f50894673b440d4690000000800000014f8afcf6e69791b283e55bd0b03e39e422745770e0000000800000014bf4fc1aed64c871a49fc6bc9dd3878ce5d4d17c6',NULL,0,'com.apple.Safari',X'fade0c000000002c00000001000000060000000200000010636f6d2e6170706c652e53616661726900000003',NULL,1687952810,NULL,NULL,NULL,NULL);"
       
